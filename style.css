@@ -107,4 +107,8 @@ footer span {
         justify-content: center;
         align-items: center;
     }
+
+    .info {
+        padding: 0px;
+    }
 }
