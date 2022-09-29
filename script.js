@@ -12,7 +12,7 @@ function fetchData(url) {
 }
 
 function displayCountries(countries) {
-    data = countries
+  data = countries;
 
   for (const country of countries) {
     const card = document.createElement("div");
@@ -67,6 +67,12 @@ function displayCountries(countries) {
         country.currencies[key].symbol +
         ")";
       info.appendChild(currency);
+
+      const link = document.createElement("a");
+      link.setAttribute('target', '_blank');
+      link.href = country.maps['googleMaps'];
+      link.innerHTML = "View";
+      info.appendChild(link)
     }
 
     card.append(flag, info);
