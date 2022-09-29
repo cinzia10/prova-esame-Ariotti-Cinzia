@@ -37,6 +37,12 @@ function displayCountries(countries) {
       "(Official name: " + country.name["official"] + ")";
     info.appendChild(officialName);
 
+    const link = document.createElement("a");
+      link.setAttribute('target', '_blank');
+      link.href = country.maps['googleMaps'];
+      link.innerHTML = "See on Map";
+      info.appendChild(link)
+
     const capital = document.createElement("span");
     capital.innerHTML = "Capital: " + country.capital;
     info.appendChild(capital);
@@ -68,11 +74,7 @@ function displayCountries(countries) {
         ")";
       info.appendChild(currency);
 
-      const link = document.createElement("a");
-      link.setAttribute('target', '_blank');
-      link.href = country.maps['googleMaps'];
-      link.innerHTML = "View";
-      info.appendChild(link)
+      
     }
 
     card.append(flag, info);
